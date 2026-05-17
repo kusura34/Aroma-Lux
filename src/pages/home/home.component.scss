@@ -1,0 +1,84 @@
+.banners {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+
+  .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url("/images/banner1.png") no-repeat center center;
+    background-size: cover;
+    height: 560px;
+
+    .banner-content {
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      display: flex;
+      margin: 20px 0;
+      line-height: 1.1;
+      font-family: Playfair Display;
+      justify-content: center;
+      color: var(--brand-main);
+    }
+
+    span {
+      display: flex;
+      max-width: 750px;
+      color: var(--text-main);
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  .banner-second {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+  }
+
+  .banner-second .image {
+    flex: 1 1 420px;
+    max-width: 520px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner-second .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    object-fit: cover;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  .banner-second .title {
+    flex: 1 1 420px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 30px;
+  }
+
+  .banner-second .title h1 {
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .banner-second .title span {
+    text-align: left;
+    max-width: 100%;
+  }
+}

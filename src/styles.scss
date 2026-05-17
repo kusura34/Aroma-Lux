@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* ===============================
+     🖤 PERFUME DELUXE COLOR SYSTEM
+     =============================== */
+
+  /* --- 🖤 DARK BASE (атмосфера бренда) --- */
+  --bg-main: #0B0B0F;        /* Hero / premium sections */
+  --bg-secondary: #141420;   /* Карточки */
+  --bg-surface: #1A1A22;     /* Hover / вложенность */
+  --bg-card: #141420;
+
+  /* --- 🤍 LIGHT ZONE (каталог) --- */
+  --bg-light: #F5F5F7;       /* Каталог фон */
+  --bg-light-card: #FFFFFF;
+
+  /* --- ✨ GOLD SYSTEM --- */
+  --brand-main: #C8A24A;     /* Основное золото */
+  --brand-bright: #E6C36A;   /* Hover золото */
+  --brand-light: #F3D991;    /* Мягкое свечение */
+
+  /* --- 🖋 TEXT --- */
+  --text-main: #EDEDED;        /* На тёмном */
+  --text-secondary: #A1A1AA;
+  --text-muted: #62626A;
+
+  --text-dark: #0F172A;        /* На светлом */
+
+  /* --- 🧱 BORDERS --- */
+  --border: rgba(255, 255, 255, 0.06);
+  --border-light: #E5E7EB;
+
+  /* --- ⚡ INTERACTION --- */
+  --hover: #E6C36A;
+
+  /* --- 🎯 GRADIENT --- */
+  --brand-color: linear-gradient(135deg, #C8A24A 0%, #E6C36A 100%);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    background: none;
+    color: var(--text-main);
+    border: none;
+    cursor: pointer;
+}
