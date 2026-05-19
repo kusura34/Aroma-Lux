@@ -148,12 +148,32 @@
     margin: 48px auto 24px;
   }
 
+  .dis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; // Позволяет элементам переноситься на новую строку при узких экранах
+    gap: 16px; // Добавляет отступ между элементами при переносе
+  }
+
   p {
     margin: 0;
     text-align: center;
     color: var(--text-secondary);
     font-size: 0.88rem;
     letter-spacing: 0.02em;
+  }
+
+  .admin {
+    margin: 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+
+    &:hover {
+      color: var(--brand-main);
+    }
   }
 
   /* Адаптив */
