@@ -1,1 +1,43 @@
-<p>admin-layout works!</p>
+<div class="admin-container">
+  <aside class="sidebar"  [class.open]="isSidebarOpen">
+    <div class="sidebar-header">
+      <span class="logo">Aroma<span>Lux</span></span>
+      <button *ngIf="isSidebarOpen" class="nav-item" style="background: none; border: 0; align-items: center;" (click)="toggleSidebar()">
+        <img src="/icons/close.svg" alt="Close" />
+      </button>
+    </div>
+    <div class="navigation">
+      <nav class="sidebar-nav">
+        <a routerLink="." class="nav-item">
+          <i class="icon"><img src="/icons/analytics.svg" alt="" /></i> Дашборд
+        </a>
+        <a routerLink="products" class="nav-item">
+          <i class="icon"><img style="width: 20px" src="/icons/shelves.svg" alt="" /></i> Товары
+        </a>
+        <a routerLink="categories" class="nav-item">
+          <i class="icon"><img src="/icons/category.svg" alt="" /></i> Категории
+        </a>
+        <a routerLink="/" class="nav-item back-site">
+          <i class="icon"><img src="/icons/home.svg" alt="" /></i> На сайт
+        </a>
+      </nav>
+      <a class="logout" (click)="logout()" routerLink="">Выйти</a>
+    </div>
+  </aside>
+
+  <main class="admin-content">
+    <header class="content-header">
+      <button class="burger" (click)="toggleSidebar()">☰</button>
+      <h1>Панель управления</h1>
+      <div class="user-info">Администратор</div>
+    </header>
+
+    <div class="page-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+<div class="overlay"
+     *ngIf="isSidebarOpen"
+     (click)="toggleSidebar()">
+</div>

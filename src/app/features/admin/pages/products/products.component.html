@@ -1,0 +1,45 @@
+<div class="admin-products">
+  <div class="header-actions">
+    <h2>Список товаров</h2>
+    <button class="btn-add" (click)="openDialog()">Добавить товар</button>
+  </div>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>Фото</th>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Категория</th>
+        <th>Действия</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>
+          <img
+            [src]="product.images[0]"
+            [alt]="product.name"
+            class="product-image"
+          />
+        </td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.variants[0].price }} ₼</td>
+        <td>{{ product.gender }}</td>
+        <td>
+          <button class="edit-btn">
+            <img src="/icons/edit.svg" alt="Edit" />
+          </button>
+          <button class="delete-btn">
+            <img src="/icons/delete.svg" alt="Delete" />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="product-actions">
+  <button class="edit-btn"><img src="/icons/edit.svg" alt="Edit" /></button>
+  <button class="delete-btn">
+    <img src="/icons/delete.svg" alt="Delete" />
+  </button>
+</div>
