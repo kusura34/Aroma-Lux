@@ -1,0 +1,80 @@
+<div class="dialog-container">
+  <header class="dialog-header">
+    <h2>{{ isEditMode ? 'Редактировать' : 'Добавить' }} <span>аромат</span></h2>
+    <button type="button" class="close-btn" (click)="onClose()">
+      <img src="/icons/close.svg" alt="Закрыть" />
+    </button>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="formSubmit()" class="product-form">
+    <div class="form-scroll-area">
+      
+      <section class="form-section">
+        <div class="field">
+          <label>Название аромата</label>
+          <input type="text" formControlName="name" placeholder="Напр: Rosso Nobile" />
+        </div>
+
+        <div class="field">
+          <label>Описание парфюма</label>
+          <textarea
+            formControlName="description"
+            rows="3"
+            placeholder="Опишите верхние ноты, сердце и шлейф аромата..."
+          ></textarea>
+        </div>
+      </section>
+
+      <section class="form-row">
+        <div class="field">
+          <label>Цена (₼)</label>
+          <input type="number" formControlName="price" placeholder="0" />
+        </div>
+        <div class="field">
+          <label>Объем (мл)</label>
+          <input type="text" formControlName="weight" placeholder="100 мл" />
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="field">
+          <label>Коллекция / Категория</label>
+          <select formControlName="category">
+            <option value="" disabled selected>Выберите категорию</option>
+            <option *ngFor="let category of categories$ | async" [value]="category.slug">
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="field upload-section">
+          <label>Фотография флакона</label>
+          <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" hidden />
+
+          <div class="upload-zone" (click)="fileInput.click()" [class.loading]="isUploading()">
+            <ng-container *ngIf="!form.value.imageUrl; else preview">
+              <span class="icon"><img src="/icons/camera.svg" alt="" /></span>
+              <p>Нажмите, чтобы загрузить фото</p>
+            </ng-container>
+
+            <ng-template #preview>
+              <img [src]="form.value.imageUrl" class="preview-img" alt="Превью" />
+              <div class="change-overlay">Изменить фото</div>
+            </ng-template>
+          </div>
+          <input type="hidden" formControlName="imageUrl" />
+        </div>
+      </section>
+
+      <div class="checkbox-field">
+        <input type="checkbox" id="available" formControlName="isAvailable" />
+        <label for="available">Доступен для покупки</label>
+      </div>
+    </div>
+
+    <footer class="dialog-footer">
+      <button type="button" class="btn-cancel" (click)="onClose()">Отмена</button>
+      <button type="submit" class="btn-submit">Создать товар</button>
+    </footer>
+  </form>
+</div>

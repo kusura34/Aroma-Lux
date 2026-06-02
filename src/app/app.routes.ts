@@ -6,7 +6,7 @@ import { HomeComponent } from '../pages/home/home.component';
 import { CartComponent } from '../pages/cart/cart.component';
 import { ProductListComponent } from './features/products/pages/product-list/product-list.component';
 import { DashboardComponent } from './features/admin/pages/dashboard/dashboard.component';
-import { ProductsComponent } from './features/admin/pages/products/products.component';
+import { ProductsComponent } from './features/admin/pages/products/products-list/products.component';
 import { CategoriesComponent } from './features/admin/pages/categories/categories.component';
 
 export const routes: Routes = [
