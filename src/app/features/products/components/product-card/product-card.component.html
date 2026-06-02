@@ -1,0 +1,18 @@
+<div class="card">
+  
+  <div class="image-container">
+    <img [src]="product.images[0]" [alt]="product.name">
+  </div>
+
+  <div class="content">
+    <h3 class="title">{{ product.name }}</h3>
+    <p class="description">{{ product.description }}</p>
+    
+    <div class="footer">
+      <span class="price">{{ product.variants[0].price }} ₽</span>
+      <button class="buy-btn" (click)="addToCart(product)">
+        <img src="/icons/add.svg" alt="">
+      </button>
+    </div>
+  </div>
+</div>
